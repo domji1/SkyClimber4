@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://New Piskel - 2023-08-17T184707.754.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Cloudspawn.tscn" type="PackedScene" id=11]
 [ext_resource path="res://DJSpawner.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Junkspawn.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Airship.png" type="Texture" id=14]
 [ext_resource path="res://AstSpawner.tscn" type="PackedScene" id=15]
 [ext_resource path="res://SATSpawner.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Rocket.tscn" type="PackedScene" id=17]
@@ -166,3 +167,8 @@ position = Vector2( 2022, 3054 )
 
 [node name="AstSpawner" parent="." instance=ExtResource( 15 )]
 position = Vector2( 0, -6600 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 469, 1933 )
+scale = Vector2( 30.3125, 121.813 )
+texture = ExtResource( 14 )
