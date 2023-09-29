@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/igor-video-game-soundtrack-organ-gothic-141567.mp3-07b0a3eea38d61126ce2723b4b81efa9.mp3str"
+
+[deps]
+
+source_file="res://Audio/igor-video-game-soundtrack-organ-gothic-141567.mp3"
+dest_files=[ "res://.import/igor-video-game-soundtrack-organ-gothic-141567.mp3-07b0a3eea38d61126ce2723b4b81efa9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

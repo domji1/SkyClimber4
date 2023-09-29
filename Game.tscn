@@ -1,0 +1,168 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://New Piskel - 2023-08-17T184707.754.png" type="Texture" id=2]
+[ext_resource path="res://Cloud.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game.gd" type="Script" id=4]
+[ext_resource path="res://BalloonSpawner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://PowerupSword spawner.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Deleter.gd" type="Script" id=7]
+[ext_resource path="res://Powerup spawner.tscn" type="PackedScene" id=8]
+[ext_resource path="res://PowerupSCORE spawner.tscn" type="PackedScene" id=9]
+[ext_resource path="res://PowerupPower spawner.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Cloudspawn.tscn" type="PackedScene" id=11]
+[ext_resource path="res://DJSpawner.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Junkspawn.tscn" type="PackedScene" id=13]
+[ext_resource path="res://AstSpawner.tscn" type="PackedScene" id=15]
+[ext_resource path="res://SATSpawner.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Rocket.tscn" type="PackedScene" id=17]
+[ext_resource path="res://cloudPestSpawner.tscn" type="PackedScene" id=18]
+[ext_resource path="res://ElekSpawner.tscn" type="PackedScene" id=19]
+[ext_resource path="res://DroSpawner.tscn" type="PackedScene" id=20]
+[ext_resource path="res://StoSpawner.tscn" type="PackedScene" id=21]
+[ext_resource path="res://SJSpawner.tscn" type="PackedScene" id=22]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 1724, 60 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 2141.5, 337 )
+
+[node name="Game" type="Node2D"]
+position = Vector2( 0, -1 )
+script = ExtResource( 4 )
+
+[node name="Rocket" parent="." instance=ExtResource( 17 )]
+position = Vector2( -3, -6451 )
+
+[node name="KinematicBody2D2" type="KinematicBody2D" parent="."]
+position = Vector2( -60, -6460 )
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D2"]
+shape = SubResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 1500 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 100, 400 )
+z_index = -4096
+texture = ExtResource( 2 )
+
+[node name="markers" type="Node2D" parent="."]
+z_index = -1
+
+[node name="Marker" type="KinematicBody2D" parent="markers"]
+position = Vector2( -1600, -3180 )
+
+[node name="Marker2" type="KinematicBody2D" parent="markers"]
+position = Vector2( -1597, 0 )
+
+[node name="Marker3" type="KinematicBody2D" parent="markers"]
+position = Vector2( -1500, 3179 )
+
+[node name="Marker5" type="KinematicBody2D" parent="markers"]
+position = Vector2( -1600, -6400 )
+
+[node name="Marker4" type="KinematicBody2D" parent="markers"]
+position = Vector2( -1600, 6400 )
+
+[node name="Marker6" type="KinematicBody2D" parent="markers"]
+position = Vector2( 1600, 6402 )
+
+[node name="Powerup spawner" parent="markers" instance=ExtResource( 8 )]
+position = Vector2( -981, -8325 )
+
+[node name="Junkspawn" parent="." instance=ExtResource( 13 )]
+position = Vector2( 2293, -4382 )
+
+[node name="Clouds" type="Node2D" parent="."]
+position = Vector2( 0, 135 )
+
+[node name="Cloud" parent="Clouds" instance=ExtResource( 3 )]
+position = Vector2( 0, 1500 )
+
+[node name="PowerupPower spawner" parent="." instance=ExtResource( 9 )]
+position = Vector2( -983, -8587 )
+
+[node name="Powerup spawner2" parent="." instance=ExtResource( 10 )]
+position = Vector2( -1208, -8709 )
+
+[node name="BalloonSpawner" parent="." instance=ExtResource( 5 )]
+position = Vector2( -889, 6719 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 1600, 0 )
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 4, 0 )
+scale = Vector2( 1, 1e+06 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( -3204, 0 )
+scale = Vector2( 1, 100000 )
+shape = SubResource( 1 )
+
+[node name="Cloudspawn" parent="." instance=ExtResource( 11 )]
+position = Vector2( 0, 6806 )
+
+[node name="Deleter" type="KinematicBody2D" parent="."]
+position = Vector2( 0, 10000 )
+script = ExtResource( 7 )
+
+[node name="Area2D" type="Area2D" parent="Deleter"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deleter/Area2D"]
+position = Vector2( 53, 7605 )
+scale = Vector2( 1e+08, 1 )
+shape = SubResource( 2 )
+
+[node name="ElekSpawner" parent="." instance=ExtResource( 19 )]
+position = Vector2( -1922, 1813 )
+
+[node name="ElekSpawner2" parent="." instance=ExtResource( 19 )]
+position = Vector2( 1868, 1886 )
+
+[node name="DroSpawner" parent="." instance=ExtResource( 20 )]
+position = Vector2( -255, 7126 )
+
+[node name="DroSpawner2" parent="." instance=ExtResource( 20 )]
+position = Vector2( -80, -7205 )
+
+[node name="StoSpawner" parent="." instance=ExtResource( 21 )]
+position = Vector2( -2259, -3442 )
+
+[node name="StoSpawner2" parent="." instance=ExtResource( 21 )]
+position = Vector2( 2203, -3836 )
+
+[node name="SJSpawner" parent="." instance=ExtResource( 22 )]
+position = Vector2( -3008, -2273 )
+
+[node name="SJSpawner2" parent="." instance=ExtResource( 22 )]
+position = Vector2( 3401, -2471 )
+
+[node name="SATSpawner" parent="." instance=ExtResource( 16 )]
+position = Vector2( -2212, -4411 )
+
+[node name="cloudPestSpawner" parent="." instance=ExtResource( 18 )]
+position = Vector2( -446, 6650 )
+
+[node name="PowerupSword spawner" parent="." instance=ExtResource( 6 )]
+position = Vector2( -1295, -9074 )
+
+[node name="DJSpawner" parent="." instance=ExtResource( 12 )]
+position = Vector2( -2309, 3005 )
+
+[node name="DJSpawner2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 2022, 3054 )
+
+[node name="AstSpawner" parent="." instance=ExtResource( 15 )]
+position = Vector2( 0, -6600 )

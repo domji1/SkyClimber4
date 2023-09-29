@@ -1,0 +1,318 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://New Piskel - 2023-08-11T123526.949.png" type="Texture" id=1]
+[ext_resource path="res://New Piskel - 2023-08-11T123430.108.png" type="Texture" id=2]
+[ext_resource path="res://New Piskel - 2023-08-11T123639.611.png" type="Texture" id=3]
+[ext_resource path="res://New Piskel - 2023-08-11T123613.040.png" type="Texture" id=4]
+[ext_resource path="res://Player.gd" type="Script" id=5]
+[ext_resource path="res://New Piskel - 2023-08-17T192647.282.png" type="Texture" id=6]
+[ext_resource path="res://New Piskel - 2023-08-17T192636.037.png" type="Texture" id=7]
+[ext_resource path="res://New Piskel - 2023-08-17T192656.380.png" type="Texture" id=8]
+[ext_resource path="res://New Piskel - 2023-08-17T192707.655.png" type="Texture" id=9]
+[ext_resource path="res://New Piskel - 2023-08-18T103450.843.png" type="Texture" id=10]
+[ext_resource path="res://Kenney Mini Square.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Sword.png" type="Texture" id=12]
+[ext_resource path="res://Audio/igor-video-game-soundtrack-organ-gothic-141567.mp3" type="AudioStream" id=13]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12, 12 )
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 12, 3 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 12, 5.5 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 64
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 11 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "Game Over"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("GameOver:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GameOver:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1043, 277 ), Vector2( 704, 384 ), Vector2( 336, 260 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("GameOver:rect_rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -112.3, -360.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Fade:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3.3, 3.8, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Score:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.5, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 351, 11 ), Vector2( 192, 317 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Score:rect_scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.5, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 2, 2 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("GameOver:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GameOver:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 336, 260 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("GameOver:rect_rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Fade:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Score:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 351, 11 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Score:rect_scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 98.25, 5.75 )
+
+[node name="Player" type="KinematicBody2D"]
+scale = Vector2( 2, 2 )
+collision_layer = 19
+collision_mask = 19
+script = ExtResource( 5 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 3.126, 3.126 )
+limit_left = -1600
+limit_top = -6400
+limit_right = 1600
+limit_bottom = 6398
+smoothing_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 3
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -27.5 )
+frames = SubResource( 3 )
+frame = 3
+speed_scale = 5.0
+playing = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 18 )
+shape = SubResource( 4 )
+
+[node name="jump" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jump"]
+position = Vector2( 0, 20.5 )
+shape = SubResource( 5 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Health" type="HBoxContainer" parent="HUD"]
+margin_left = 19.0
+margin_top = 14.0
+margin_right = 69.0
+margin_bottom = 61.0
+rect_scale = Vector2( 4, 4 )
+
+[node name="Score" type="Label" parent="HUD"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -161.0
+margin_top = -289.0
+margin_right = 161.0
+margin_bottom = -209.0
+custom_fonts/font = SubResource( 6 )
+text = "0"
+align = 1
+
+[node name="GameOver" type="Label" parent="HUD"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -176.0
+margin_top = -40.0
+margin_right = 176.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 6 )
+text = "GAME OVER"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD"]
+"anims/Game Over" = SubResource( 7 )
+anims/RESET = SubResource( 8 )
+
+[node name="Fade" type="ColorRect" parent="HUD"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="Sword" type="KinematicBody2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Sword"]
+collision_layer = 65535
+collision_mask = 65535
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sword/Area2D"]
+position = Vector2( 132.25, 0.25 )
+shape = SubResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Sword"]
+position = Vector2( 132, 0.125 )
+scale = Vector2( 5, 3.5 )
+texture = ExtResource( 12 )
+
+[node name="Timer3" type="Timer" parent="Sword"]
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -13.0
+autoplay = true
+
+[connection signal="animation_finished" from="HUD/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Sword/Timer3" to="." method="_on_Timer3_timeout"]

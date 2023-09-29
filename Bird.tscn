@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://New Piskel - 2023-09-01T155646.592.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends KinematicBody2D
+
+var Velocity = Vector2.ZERO
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if global_position.y > 6400:
+		if rotation_degrees > -180 and rotation_degrees < 0:
+			rotation_degrees += 5
+		if rotation_degrees < 180 and rotation_degrees > 0:
+			rotation_degrees -= 5
+	if global_position.y < 3180:
+		if rotation_degrees > -180 and rotation_degrees < 0:
+			rotation_degrees -= 5
+		if rotation_degrees < 180 and rotation_degrees > 0:
+			rotation_degrees += 5
+	Velocity = Vector2(500, 0).rotated(rotation)
+	move_and_slide(Velocity)
+"
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 16.0312
+
+[node name="Bird" type="KinematicBody2D"]
+scale = Vector2( 5, 5 )
+collision_layer = 32
+collision_mask = 0
+script = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+rotation = 1.5708
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )

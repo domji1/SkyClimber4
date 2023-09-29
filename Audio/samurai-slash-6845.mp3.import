@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/samurai-slash-6845.mp3-523a306fb4a613faa3aa0d07310337d0.mp3str"
+
+[deps]
+
+source_file="res://Audio/samurai-slash-6845.mp3"
+dest_files=[ "res://.import/samurai-slash-6845.mp3-523a306fb4a613faa3aa0d07310337d0.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

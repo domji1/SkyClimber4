@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/coin-upaif-14631.mp3-92d51e7ab9c2edabc1080382f1aa1d7d.mp3str"
+
+[deps]
+
+source_file="res://Audio/coin-upaif-14631.mp3"
+dest_files=[ "res://.import/coin-upaif-14631.mp3-92d51e7ab9c2edabc1080382f1aa1d7d.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
